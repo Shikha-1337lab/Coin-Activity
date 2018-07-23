@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="../../favicon.png">
+
+    <title>NEWS FEED - CoinActivity.io</title>
+
+    <!-- Custom styles for this template -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+	  <link href="css/main.css" rel="stylesheet">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/custom-jquery.js"></script>
+
+	</head>
+
+  <body>
+    <div class="outer-container">
+      <div id="container-loginPanel" class="">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email:</label>
+              <input type="text" id="fname" name="firstname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="pwd">Password:</label>
+              <input type="password" id="cname" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="lnone"></label>
+              <div>
+                <input type="button" id="login" class="button btn-secondary" value="LOGIN">
+                <!input type="button" id="cancel-login" value="CANCEL">
+              </div>
+            </div>
+          </div>
+          <p><a href="#" alt="" class="btn-lists hpLink-sm">Forgot Password?</a></p>
+        </form>
+      </div> <!-- End Container LoginPanel -->
+
+      <div id="container-createPanel" class="">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email:</label>
+              <input type="text" id="fname1" name="firstname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="pwd">Password:</label>
+              <input type="password" id="cname1" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="cpwd">Confirm Password:</label>
+              <input type="password" id="cname1" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="lnone"></label>
+              <div>
+                <input type="button" id="create" class="button btn-secondary" value="CREATE">
+                <!input type="button" id="cancel-create" value="CANCEL">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div> <!-- End Container-CreatePanel -->
+
+      <div class="container-topNavbar">
+        <ul class="updates floatLeft">
+          <li>Total Market: $430,924,404,398</li>
+          <li>|</li>
+          <li>24H Volume: $23,589,254,664</li>
+          <li>|</li>
+          <li>BTC Dominance: 36.2%</li>
+        </ul>
+        <div class="floatRight btn-grp">
+          <input type="button" id="btn-login" class="button btn-secondary" value="LOGIN">
+          <input type="button" id="btn-createAccount" class="button btn-primary" value="CREATE ACCOUNT">
+        </div>
+      </div><!-- End Container-topNavbar -->
+
+    </div> <!-- End Outer Container -->
+
+    <div class="blankDiv"></div>
+
+    <div class="root">
+    	<header>
+
+        <div class="container-branding">
+          <div class="floatLeft">
+            <a href="index.html" alt="CoinActivity Logo"><img src="img/logo-coinactivity.png" alt=""/></a>
+          </div>
+
+          <div class="floatRight btn-nav">
+            <button onclick="javascript:location.href='index.html'" class="button btn-outline"><i class="fa fa-bar-chart fa-lg"></i>MARKET</button>
+            <button onclick="javascript:location.href='newsfeed.html'" class="button btn-outline-selected"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED</button>
+          </div>
+      	</div>
+
+        <div class="container-searchCtrl-inner">
+          <form>
+            <div class="searchCtrl-content">
+                <input type="search" id="search" placeholder="Search..." />
+                <span class="icon"><i class="fa fa-search"></i></span>
+            </div>
+          </form>
+        </div>
+
+    	</header>
+
+    	<section>
+    		<div class="container-newsfeed">
+
+          <div class="block-filters">FILTERS AND OPTIONS</div>
+
+          <article class="blog-item">
+            <div class="thumbnail">
+              <a href="#" title="Title will be displayed here.">
+                <img class="thumbnail" src="img/newsfeed/chile-court-orders-1-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+              </a>
+            </div>
+            <div class="blog-item-details">
+              <div class="blog-meta-info">
+                <span> 2hrs ago</span>
+                <span> | </span>
+                <span><a href="#">cointelegraph.com</a></span>
+              </div>
+              <h3 class="blog-title">
+                <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </a>
+              </h3>
+              <div class="blog-other-info">
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-commenting-o fa-lg"></i>5 Comments</button>
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-eye fa-lg"></i>Quick-Peek</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-item">
+            <div class="thumbnail">
+              <a href="#" title="Title will be displayed here.">
+                <img class="thumbnail" src="img/newsfeed/ripple-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+              </a>
+            </div>
+            <div class="blog-item-details">
+              <div class="blog-meta-info">
+                <span> Yesterday</span>
+                <span> | </span>
+                <span><a href="#">cointelegraph.com</a></span>
+              </div>
+              <h3 class="blog-title">
+                <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </a>
+              </h3>
+              <div class="blog-other-info">
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-commenting-o fa-lg"></i>5 Comments</button>
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-eye fa-lg"></i>Quick-Peek</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-item">
+            <div class="thumbnail">
+              <a href="#" title="Title will be displayed here.">
+                <img class="thumbnail" src="img/newsfeed/btc-growth-3-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+              </a>
+            </div>
+            <div class="blog-item-details">
+              <div class="blog-meta-info">
+                <span> April 28, 2018</span>
+                <span> | </span>
+                <span><a href="#">cointelegraph.com</a></span>
+              </div>
+              <h3 class="blog-title">
+                <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+              </h3>
+              <div class="blog-other-info">
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-commenting-o fa-lg"></i>5 Comments</button>
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-eye fa-lg"></i>Quick-Peek</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-item">
+            <div class="thumbnail">
+              <a href="#" title="Title will be displayed here.">
+                <img class="thumbnail" src="img/newsfeed/law-suit-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+              </a>
+            </div>
+            <div class="blog-item-details">
+              <div class="blog-meta-info">
+                <span> April 28, 2018</span>
+                <span> | </span>
+                <span><a href="#">cointelegraph.com</a></span>
+              </div>
+              <h3 class="blog-title">
+                <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </a>
+              </h3>
+              <div class="blog-other-info">
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-commenting-o fa-lg"></i>5 Comments</button>
+                <button onclick="javascript:location.href='#'" class="button btn-tertiary"><i class="fa fa-eye fa-lg"></i>Quick-Peek</button>
+              </div>
+            </div>
+          </article>
+
+          <div class="center-div">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">First</a></li>
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item"><a class="page-link selected" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              <li class="page-item"><a class="page-link" href="#">Last</a></li>
+            </ul>
+          </div>
+
+        </div>
+    	</section>
+
+      <footer>
+      	<div class="container-footer">
+      		<div>
+      			<ul>
+      				<li><a href="#">Advertise</a></li>
+              <li>|</li>
+      				<li><a href="#">Contact</a></li>
+              <li>|</li>
+      				<li><a href="#">Privacy</a></li>
+      			</ul>
+      		</div>
+          <div>
+            <p>COINACTIVITY © 2018</p>
+          </div>
+      	</div>
+      </footer>
+
+    <div> <!-- END ROOT -->
+  </body>
+</html>

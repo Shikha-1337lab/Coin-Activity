@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="../../favicon.png">
+
+    <title>CoinActivity.io</title>
+
+    <!-- Custom styles for this template -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+	  <link href="css/main.css" rel="stylesheet">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/custom-jquery.js"></script>
+
+	</head>
+
+  <body>
+    <div class="outer-container">
+      <div id="container-loginPanel" class="">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email:</label>
+              <input type="text" id="fname" name="firstname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="pwd">Password:</label>
+              <input type="password" id="cname" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="lnone"></label>
+              <div>
+                <input type="button" id="login" class="button btn-secondary" value="LOGIN">
+                <!input type="button" id="cancel-login" value="CANCEL">
+              </div>
+            </div>
+          </div>
+          <p><a href="#" alt="" class="btn-lists hpLink-sm">Forgot Password?</a></p>
+        </form>
+      </div> <!-- End Container LoginPanel -->
+
+      <div id="container-createPanel" class="">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email:</label>
+              <input type="text" id="fname1" name="firstname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="pwd">Password:</label>
+              <input type="password" id="cname1" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="cpwd">Confirm Password:</label>
+              <input type="password" id="cname1" name="cardname" placeholder="">
+            </div>
+
+            <div class="col-25">
+              <label for="lnone"></label>
+              <div>
+                <input type="button" id="create" class="button btn-secondary" value="CREATE">
+                <!input type="button" id="cancel-create" value="CANCEL">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div> <!-- End Container-CreatePanel -->
+
+      <div class="container-topNavbar">
+        <ul class="updates floatLeft">
+          <li>Total Market: $430,924,404,398</li>
+          <li>|</li>
+          <li>24H Volume: $23,589,254,664</li>
+          <li>|</li>
+          <li>BTC Dominance: 36.2%</li>
+        </ul>
+        <div class="floatRight btn-grp">
+          <input type="button" id="btn-login" class="button btn-secondary" value="LOGIN">
+          <input type="button" id="btn-createAccount" class="button btn-primary" value="CREATE ACCOUNT">
+        </div>
+      </div><!-- End Container-topNavbar -->
+
+    </div> <!-- End Outer Container -->
+
+    <div class="blankDiv"></div>
+
+    <div class="root">
+      <header>
+        <div class="container-branding">
+          <div class="floatLeft">
+            <a href="index.html" alt="CoinActivity Logo"><img src="img/logo-coinactivity.png" alt=""/></a>
+          </div>
+
+          <div class="floatRight btn-nav">
+            <button onclick="javascript:location.href='index.html'" class="button btn-outline-selected"><i class="fa fa-bar-chart fa-lg"></i>MARKET</button>
+            <button onclick="javascript:location.href='newsfeed.html'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED</button>
+          </div>
+      	</div>
+
+        <div class="container-searchCtrl">
+          <form>
+            <div class="searchCtrl-content">
+                <input type="search" id="search" placeholder="Search..." />
+                <span class="icon"><i class="fa fa-search"></i></span>
+            </div>
+            <div class="search-info">Trending: Bitcoin, Ripple, Stellar, Nano, Tron</div>
+          </form>
+        </div>
+
+      </header>
+
+      <section>
+      	<div class="container-searchResults">
+          <table id="table" cellspacing="0" width="100%" role="grid">
+            <thead>
+              <tr role="row">
+                <th class="center-align">#</th>
+                <th class="left-align">Coin</th>
+                <th>Price</th>
+                <th>24hr</th>
+                <th>Volume</th>
+                <th>Market Cap</th>
+                <th>Monthly</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr role="row" class="odd">
+                <td class="center-align">1</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/btc.png"/>
+                    <div class="content">
+                      <div class="coin-name">Bitcoin</div>
+                      <div class="sub header">BTC</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">2</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/usdt.png"/>
+                    <div class="content">
+                      <div class="coin-name">Tether</div>
+                      <div class="sub header">USDT</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="center-align">3</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/xn.png"/>
+                    <div class="content">
+                      <div class="coin-name">Nodium</div>
+                      <div class="sub header">XN</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">4</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/btcc.png"/>
+                    <div class="content">
+                      <div class="coin-name">Bitcoin Core</div>
+                      <div class="sub header">BTCC</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="center-align">5</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/actn.png"/>
+                    <div class="content">
+                      <div class="coin-name">Action Coin</div>
+                      <div class="sub header">ACTN</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">6</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/dow.png"/>
+                    <div class="content">
+                      <div class="coin-name">DowCoin</div>
+                      <div class="sub header">DOW</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="center-align">1</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/btc.png"/>
+                    <div class="content">
+                      <div class="coin-name">Bitcoin</div>
+                      <div class="sub header">BTC</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">2</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/usdt.png"/>
+                    <div class="content">
+                      <div class="coin-name">Tether</div>
+                      <div class="sub header">USDT</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="center-align">3</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/xn.png"/>
+                    <div class="content">
+                      <div class="coin-name">Nodium</div>
+                      <div class="sub header">XN</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">4</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/btcc.png"/>
+                    <div class="content">
+                      <div class="coin-name">Bitcoin Core</div>
+                      <div class="sub header">BTCC</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="odd">
+                <td class="center-align">5</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/actn.png"/>
+                    <div class="content">
+                      <div class="coin-name">Action Coin</div>
+                      <div class="sub header">ACTN</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$6,256.26</td>
+                <td>1.20%</td>
+                <td>$5,793,029,480</td>
+                <td>$107,082,449,490</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+              <tr role="row" class="even">
+                <td class="center-align">6</td>
+                <td class="left-align">
+                  <a href="coins.html">
+                    <img src="img/coins/dow.png"/>
+                    <div class="content">
+                      <div class="coin-name">DowCoin</div>
+                      <div class="sub header">DOW</div>
+                    </div>
+                  </a>
+                </td>
+                <td>$455.74</td>
+                <td>1.18%</td>
+                <td>$4,394,657,360</td>
+                <td>$45,715,364,466</td>
+                <td><svg viewBox="0 0 336 100" width="116" height="35"><polyline fill="none" stroke="#3cb9b1" stroke-width="6" points="0,11 12,0 24,7 36,15 48,18 60,17 72,4 84,3 96,2 108,8  120,9 132,7 144,22 156,52 168,62 180,69 192,78 204,73 216,72 228,72 240,100 252,95 264,66 276,68 288,68 300,73 312,57 324,65"></polyline></svg></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="center-div">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">First</a></li>
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item"><a class="page-link selected" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              <li class="page-item"><a class="page-link" href="#">Last</a></li>
+            </ul>
+          </div>
+
+      	</div>
+      </section>
+
+      <footer>
+      	<div class="container-footer">
+      		<div>
+      			<ul>
+      				<li><a href="#">Advertise</a></li>
+              <li>|</li>
+      				<li><a href="#">Contact</a></li>
+              <li>|</li>
+      				<li><a href="#">Privacy</a></li>
+      			</ul>
+      		</div>
+          <div>
+            <p>COINACTIVITY © 2018</p>
+          </div>
+      	</div>
+      </footer>
+
+    </div> <!-- End Root -->
+  </body>
+</html>
