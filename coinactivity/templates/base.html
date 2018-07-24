@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,12 +14,13 @@
     <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
 	  <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
-    <script src="js/jquery.js"></script>
-    <script src="js/custom-jquery.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/custom-jquery.js' %}"></script>
 
 	</head>
 
   <body>
+  {% comment %}
     <div class="outer-container">
       <div id="container-loginPanel" class="">
         <form>
@@ -74,6 +75,7 @@
           </div>
         </form>
       </div> <!-- End Container-CreatePanel -->
+  {% endcomment %}
 
       <div class="container-topNavbar">
         <ul class="updates floatLeft">
@@ -91,14 +93,15 @@
 
     </div> <!-- End Outer Container -->
 
-    <div class="blankDiv"></div>
+  <div class="blankDiv"></div>
 
     <div class="root">
     	<header>
 
         <div class="container-branding">
           <div class="floatLeft">
-            <a href="index.html" alt="CoinActivity Logo"><img src="img/logo-coinactivity.png" alt=""/></a>
+            <a href="index.html" alt="CoinActivity Logo"><img src="{% static 'img/logo-coinactivity.png' %}" alt=""/></a>
+
           </div>
 
           <div class="floatRight btn-nav">
@@ -124,7 +127,7 @@
             <div class="coin-block-inner">
               <article>
                 <div>
-                  <img class="thumbnail" src="img/coins/opengraph.png" alt="" title="">
+                  <img class="thumbnail" src="{% static 'img/coins/opengraph.png' %}" alt="" title="">
                 </div>
 {% block content %}
 
