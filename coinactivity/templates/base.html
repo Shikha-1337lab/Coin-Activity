@@ -77,6 +77,7 @@
       </div> <!-- End Container-CreatePanel -->
   {% endcomment %}
 
+
       <div class="container-topNavbar">
         <ul class="updates floatLeft">
           <li>Total Market: $430,924,404,398</li>
@@ -86,8 +87,12 @@
           <li>BTC Dominance: 36.2%</li>
         </ul>
         <div class="floatRight btn-grp">
-          <input type="button" id="btn-login" class="button btn-secondary" value="LOGIN">
-          <input type="button" id="btn-createAccount" class="button btn-primary" value="CREATE ACCOUNT">
+          <form action="{% url 'login' %}">
+            <input type="submit" id="btn-login" class="button btn-secondary" value="LOGIN">
+            <button form="btn-createAccount" class="button btn-primary">CREATE ACCOUNT</button>
+          </form>
+          <form id="btn-createAccount" action="{% url 'signup' %}">
+          </form>
         </div>
       </div><!-- End Container-topNavbar -->
 
@@ -131,8 +136,8 @@
                 </div>
 {% block content %}
 
-{% endblock %}
 
+{% endblock %}
           <div class="center-div">
             <ul class="pagination">
               <li class="page-item"><a class="page-link" href="#">First</a></li>
@@ -169,4 +174,5 @@
 
     </div> <!-- END ROOT -->
   </body>
+
 </html>

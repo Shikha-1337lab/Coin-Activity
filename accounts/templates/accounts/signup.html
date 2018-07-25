@@ -13,30 +13,34 @@
 
 {% endif %}
 
-<h1> Sign Up! </h1>
+  <form method="POST" action="{% url 'signup' %}">
 
-<form method="POST" action="{% url 'signup' %}">
+  {% csrf_token %}
+      <div class="row">
+        <div class="col-25">
+          <label for="email">Email:</label>
+          <input type="text" id="fname1" name="username" placeholder="">
+        </div>
 
-{% csrf_token %}
+        <div class="col-25">
+          <label for="pwd">Password:</label>
+          <input type="password" id="cname1" name="password1" placeholder="">
+        </div>
 
-Username:
-<br />
-<input type="text" name="username" />
-<br />
-Password:
-<br />
-<input type="password" name="password1" />
-<br />
-Confirm Password:
-<br />
-<input type="password" name="password2" />
-<br />
-<br />
-<input type="submit" name="submit" value="Sign Up!" class="btn btn-primary" />
+        <div class="col-25">
+          <label for="cpwd">Confirm Password:</label>
+          <input type="password" id="cname1" name="password2" placeholder="">
+        </div>
 
+        <div class="col-25">
+          <label for="lnone"></label>
+          <div>
+            <input type="submit" id="create" class="button btn-secondary" value="CREATE">
+            <!input type="button" id="cancel-create" value="CANCEL">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div> <!-- End Container-CreatePanel -->
 
-</form>
-
-
-
-{% endblock %}
+  {% endblock %}

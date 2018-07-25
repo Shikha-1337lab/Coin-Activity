@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-{% load static %}
+{% load staticfiles %}
 {% block content %}
 <div class="coin-details">
   <div class="block-meta-info">
@@ -57,11 +57,11 @@
 
 <section>
 <div class="container newsfeed">
-
+{% comment %}
 <article class="blog-item">
 <div class="thumbnail">
 <a href="#" title="Title will be displayed here.">
-<img class="thumbnail" src="img/newsfeed/chile-court-orders-1-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+<img class="thumbnail" src="{% static 'img/newsfeed/chile-court-orders-1-218x150.jpg' %}" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
 </a>
 </div>
 <div class="blog-item-details">
@@ -83,7 +83,7 @@
 <article class="blog-item">
 <div class="thumbnail">
 <a href="#" title="Title will be displayed here.">
-<img class="thumbnail" src="img/newsfeed/ripple-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+<img class="thumbnail" src="{% static 'img/newsfeed/ripple-218x150.jpg' %}" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
 </a>
 </div>
 <div class="blog-item-details">
@@ -105,7 +105,7 @@
 <article class="blog-item">
 <div class="thumbnail">
 <a href="#" title="Title will be displayed here.">
-<img class="thumbnail" src="img/newsfeed/btc-growth-3-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+<img class="thumbnail" src="{% static 'img/newsfeed/btc-growth-3-218x150.jpg' %}" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
 </a>
 </div>
 <div class="blog-item-details">
@@ -127,7 +127,7 @@
 <article class="blog-item">
 <div class="thumbnail">
 <a href="#" title="Title will be displayed here.">
-<img class="thumbnail" src="img/newsfeed/law-suit-218x150.jpg" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
+<img class="thumbnail" src="{% static 'img/newsfeed/law-suit-218x150.jpg' %}" alt="" title="Chile Court Asks Banks to Re-Open Accounts of Cryptocurrency Exchange">
 </a>
 </div>
 <div class="blog-item-details">
@@ -145,5 +145,66 @@
 </div>
 </div>
 </article>
+{% endcomment %}
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+	//feed to parse
+	var feed = "https://cointelegraph.com/rss";
+
+	$.ajax(feed, {
+		accepts:{
+			xml:"application/rss+xml"
+		},
+		dataType:"xml",
+		success:function(data) {
+			//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+
+			$(data).find("item").each(function () { // or "item" or whatever suits your feed
+				var el = $(this);
+				console.log("------------------------");
+				console.log("title      : " + el.find("title").text());
+        document.getElementById("demo").innerHTML = el.find("title").text();
+
+				console.log("link       : " + el.find("link").text());
+				console.log("description: " + el.find("description").text());
+
+        appendText(el.find("title").text(), el.find("description").text());
+			});
+
+
+		}
+	});
+
+});
+</script>
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+</div>
+<script>
+
+function appendText(ttl, dsc) {
+  //  var txt1 = "<p>Text.</p>";               // Create element with HTML
+  //  var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
+    var txt1 = document.createElement("h3");  // Create with DOM
+    txt1.innerHTML = ttl;
+
+    var txt2 = document.createElement("p");  // Create with DOM
+    txt2.innerHTML = dsc;
+
+    var txt3 = document.createElement("br");  // Create with DOM
+
+
+    $("body").append(txt1, txt2, txt3);      // Append the new elements
+}
+</script>
 
 {% endblock %}
