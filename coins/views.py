@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import auth
 import simplejson as json
+import requests
+import numpy as np
 
 
 # Old code
@@ -40,3 +43,16 @@ def logout(request):
     request.method == 'POST'
     auth.logout(request)
     return redirect('home')
+
+def newsfeed_editor(request):
+    return render(request, 'coins/newsfeed_editor.html')
+
+def market(request):
+    response = requests.get("http://coincap.io/coins")
+    coins_1 = json.loads(response.text)
+    coins = np.array(coins_1)
+    print(response)
+    print(coins)
+    print(len(coins))
+
+    return render(request, 'coins/market.html', {'coins' : coins} )

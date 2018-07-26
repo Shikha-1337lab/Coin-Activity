@@ -1,6 +1,11 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load staticfiles %}
+
+{% block content %}
+<!DOCTYPE html>
+{% comment %}
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +13,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="icon" href="../../favicon.png">
 
-    <title>COINS - CoinActivity.io</title>
+    <title>NEWS FEED - CoinActivity.io</title>
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
-	  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+	  <link href="css/main.css" rel="stylesheet">
 
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/custom-jquery.js' %}"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/custom-jquery.js"></script>
 
 	</head>
 
   <body>
-    {% comment %}
-    <div class="outer-container">
-          <div id="container-Home" class="">
-              <div class="col-25"> Home </div>
-            </div>
-      </div>
-
     <div class="outer-container">
       <div id="container-loginPanel" class="">
         <form>
@@ -81,9 +79,6 @@
           </div>
         </form>
       </div> <!-- End Container-CreatePanel -->
-  {% endcomment %}
-
-
       <div class="container-topNavbar">
         <ul class="updates floatLeft">
           <li>Total Market: $430,924,404,398</li>
@@ -93,31 +88,26 @@
           <li>BTC Dominance: 36.2%</li>
         </ul>
         <div class="floatRight btn-grp">
-          <form action="{% url 'login' %}">
-            <input type="submit" id="btn-login" class="button btn-secondary" value="LOGIN">
-            <button form="btn-createAccount" class="button btn-primary">CREATE ACCOUNT</button>
-          </form>
-          <form id="btn-createAccount" action="{% url 'signup' %}">
-          </form>
+          <input type="button" id="btn-login" class="button btn-secondary" value="LOGIN">
+          <input type="button" id="btn-createAccount" class="button btn-primary" value="CREATE ACCOUNT">
         </div>
       </div><!-- End Container-topNavbar -->
 
+
     </div> <!-- End Outer Container -->
-
-  <div class="blankDiv"></div>
-
     <div class="root">
     	<header>
 
         <div class="container-branding">
           <div class="floatLeft">
-            <a href="index.html" alt="CoinActivity Logo"><img src="{% static 'img/logo-coinactivity.png' %}" alt=""/></a>
-
+            <a href="{% static 'index.html' %}" alt="CoinActivity Logo"><img src="{% static 'img/logo-coinactivity.png' %}" alt=""/></a>
           </div>
 
           <div class="floatRight btn-nav">
-            <button onclick="javascript:location.href='index.html'" class="button btn-outline"><i class="fa fa-bar-chart fa-lg"></i>MARKET</button>
-            <button onclick="javascript:location.href='newsfeed.html'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED</button>
+            <button onclick="javascript:location.href='{% static "index.html" %}'" class="button btn-outline"><i class="fa fa-bar-chart fa-lg"></i>MARKET</button>
+            <button onclick="javascript:location.href='{% static "newsfeed.html" %}'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED</button>
+            <br />
+                        <button onclick="javascript:location.href='{% static "newsfeed_editor.html" %}'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED-EDITOR</button>
           </div>
       	</div>
 
@@ -131,56 +121,74 @@
         </div>
 
     	</header>
+    {% endcomment %}
 
-      <section class="section-coins">
+  </body>
+  <section>
+    <div class="container-newsfeed">
 
-          <div class="container-coins">
-            <div class="coin-block-inner">
-              <article>
-                <div>
-                  <img class="thumbnail" src="{% static 'img/coins/opengraph.png' %}" alt="" title="">
-                </div>
-{% block content %}
+      <div class="block-filters">FILTERS AND OPTIONS</div>
 
+      <article class="blog-item">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+	//feed to parse
+	var feed = "https://cointelegraph.com/rss";
+
+	$.ajax(feed, {
+		accepts:{
+			xml:"application/rss+xml"
+		},
+		dataType:"xml",
+		success:function(data) {
+			//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+
+			$(data).find("item").each(function () { // or "item" or whatever suits your feed
+				var el = $(this);
+				console.log("------------------------");
+				console.log("title      : " + el.find("title").text());
+        document.getElementById("demo").innerHTML = el.find("title").text();
+
+				console.log("link       : " + el.find("link").text());
+				console.log("description: " + el.find("description").text());
+
+        appendText(el.find("title").text(), el.find("description").text());
+			});
+
+
+		}
+	});
+
+});
+
+</script>
+<div id="demo" style="text-align:center">
+  <h2>Latest news Loading..</h2>
+
+<script>
+
+function appendText(ttl, dsc) {
+  //  var txt1 = "<p>Text.</p>";               // Create element with HTML
+  //  var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
+    var txt1 = document.createElement("h3");  // Create with DOM
+    txt1.innerHTML = ttl;
+
+    var txt2 = document.createElement("p");  // Create with DOM
+    txt2.innerHTML = dsc;
+
+    var txt3 = document.createElement("br");  // Create with DOM
+
+
+    $("body").append(txt1, txt2, txt3);      // Append the new elements
+}
+
+</script>
+</div>
 
 {% endblock %}
-{% comment %}
-          <div class="center-div">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">First</a></li>
-              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-              <li class="page-item"><a class="page-link selected" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              <li class="page-item"><a class="page-link" href="#">Last</a></li>
-            </ul>
-          </div>
-
-        </div>
-    	</section>
-
-      <footer>
-      	<div class="container-footer">
-      		<div>
-      			<ul>
-      				<li><a href="#">Advertise</a></li>
-              <li>|</li>
-      				<li><a href="#">Contact</a></li>
-              <li>|</li>
-      				<li><a href="#">Privacy</a></li>
-      			</ul>
-      		</div>
-          <div>
-            <p>COINACTIVITY © 2018</p>
-          </div>
-      	</div>
-      </footer>
-
-    </div> <!-- END ROOT -->
-  </body>
-
-</html>
-{% endcomment %}

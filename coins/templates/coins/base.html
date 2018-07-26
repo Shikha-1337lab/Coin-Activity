@@ -1,5 +1,12 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load staticfiles %}
+
+{% block content %}
+
+
+{% extends %}
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,9 +25,8 @@
     <script src="{% static 'js/custom-jquery.js' %}"></script>
 
 	</head>
-
+{% comment %}
   <body>
-    {% comment %}
     <div class="outer-container">
           <div id="container-Home" class="">
               <div class="col-25"> Home </div>
@@ -144,7 +150,6 @@
 
 
 {% endblock %}
-{% comment %}
           <div class="center-div">
             <ul class="pagination">
               <li class="page-item"><a class="page-link" href="#">First</a></li>
@@ -183,4 +188,5 @@
   </body>
 
 </html>
-{% endcomment %}
+
+{% endblock %}

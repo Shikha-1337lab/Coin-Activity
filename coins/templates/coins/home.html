@@ -28,6 +28,14 @@
 
 
 {% else %}
+{% if error %}
+
+{{ error }}
+
+<br />
+<br />
+
+{% endif %}
   <body>
     <div class="outer-container">
       <div id="container-loginPanel" class="">
@@ -126,7 +134,7 @@
             <button onclick="javascript:location.href='{% static "index.html" %}'" class="button btn-outline"><i class="fa fa-bar-chart fa-lg"></i>MARKET</button>
             <button onclick="javascript:location.href='{% static "newsfeed.html" %}'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED</button>
             <br />
-                        <button onclick="javascript:location.href='{% static "newsfeed_editor.html" %}'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED-EDITOR</button>
+                        <button onclick="javascript:location.href='{% url 'newsfeed_editor' %}'" class="button btn-outline"><i class="fa fa-newspaper-o fa-lg"></i>NEWSFEED-EDITOR</button>
           </div>
       	</div>
 
@@ -311,7 +319,7 @@
 
         </div>
     	</section>
-      
+
 
       <footer>
       	<div class="container-footer">
