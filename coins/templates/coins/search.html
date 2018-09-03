@@ -1,0 +1,8 @@
+<h1> Results </h1>
+{% if results %}
+{% for each_res in results %}
+    <p>{{ each_res.name }}</p>
+    <p>{{ each_res.coin_price }}
+    <!-- <p>Rs.{{each_coin.price}}</p> -->
+{% endfor %}
+{% endif %}

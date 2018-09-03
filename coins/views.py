@@ -3,9 +3,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import auth
+from coins.models import Coins
 import simplejson as json
 import requests
 import numpy as np
+import simplejson
+from django.http import HttpResponse
 
 
 # Old code
@@ -56,3 +59,42 @@ def market(request):
     print(len(coins))
 
     return render(request, 'coins/market.html', {'coins' : coins} )
+# Search Functionality
+def search(request):
+    # if request.method == 'GET': # this will be GET now
+    #     query =  request.GET.get('q') # do some research what it does
+    #     try:
+    #         results = Coins.objects.filter(name__icontains=query) # filter returns a list so you might consider skip except part
+    #         # results = []
+    #         # for s in status:
+    #         #     results.append(s.coin_name)
+    #         return render(request,"coins/search.html", {"results":results})
+    #     except:
+    #         return render(request,"coins/demo.html",{})
+
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        try:
+            coins = Coins.objects.filter(name__icontains = q )[:20]
+            results = []
+            for coin in coins:
+                coin_json = {}
+                coin_json['id'] = coin.id
+                coin_json['label'] = coin.name
+                coin_json['value'] = coin.name
+                results.append(coin_json)
+                data = json.dumps(results)
+        except:
+            data ='fail'
+        mimetype = 'application/json'
+        return HttpResponse(data,mimetype)
+    else:
+        return render(request,'coins/demo.html',{})
+
+    # else:
+    #     data = 'fail'
+    #     mimetype = 'application/json'
+    #     return render(request,"coins/search.html", data)
+        # except:
+        #     data = 'fail'
+        #     return render(data,"coins/demo.html")

@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+</script> <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+
+<div class="ui-widget">
+  <label for="coins">Search: </label>
+  <input id="coins">
+</div>
+
+<!-- <form name="myform" method="GET" action="{% url 'search' %}"> -->
+    <!-- {% csrf_token %} -->
+    <!-- Search Coins:<input type="text" name="q" id="id_q" value="{{ query }}"/>
+    <input type="submit" value="Search" />
+</form> -->
+
+<!-- <script>
+$(document).ready(function(){
+     $( "input#search" ).autocomplete({
+                            source: "{% url 'search' %}",
+                            minLength: 3
+        });
+});
+</script> -->
+<script type="text/javascript">
+$(function() {
+  $("#coins").autocomplete({
+    source: "/api/search/",
+    minLength: 2,
+  });
+});
+//   keeps same width as box
+      jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+          var ul = this.menu.element;
+          ul.outerWidth(this.element.outerWidth());
+        }
+</script>

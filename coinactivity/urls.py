@@ -13,6 +13,7 @@ urlpatterns = [
     path('logout/', views.logout, name = 'logout'),
     path('accounts/', include('accounts.urls')),
     path('api/coins/', include(('coins.api.urls','coins'), namespace='api-coins')),
+    path('api/search/', views.search, name = 'search'),
 
 #    path('coins/', include('coins.urls')),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
